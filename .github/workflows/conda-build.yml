@@ -1,0 +1,294 @@
+# This file was generated automatically from conda-smithy. To update this configuration,
+# update the conda-forge.yml and/or the recipe/meta.yaml.
+# -*- mode: yaml -*-
+
+name: Build conda package
+on:
+  push:
+
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.CONFIG }}
+    runs-on: ${{ matrix.runs_on }}
+    timeout-minutes: 1080
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompinompi
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_h60b64ecc
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompiopenmpi
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_heac5d792
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompi
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h109dff25
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpi
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h2f1621fe
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompi
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hc3c90694
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpi
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h84fe1d0d
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompi
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hac296152
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-24.04-arm']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpi
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hbd3b5050
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-24.04-arm']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompi
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hf3f41c56
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-24.04-arm']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpi
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h084ce24e
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-24.04-arm']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+          - CONFIG: osx_64_doublenompinompi
+            SHORT_CONFIG: osx_64_doublenompinompi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-15-intel']
+          - CONFIG: osx_64_doublenompiopenmpi
+            SHORT_CONFIG: osx_64_doublenompiopenmpi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-15-intel']
+          - CONFIG: osx_64_doubleyesmpinompi
+            SHORT_CONFIG: osx_64_doubleyesmpinompi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-15-intel']
+          - CONFIG: osx_64_doubleyesmpiopenmpi
+            SHORT_CONFIG: osx_64_doubleyesmpiopenmpi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-15-intel']
+          - CONFIG: osx_arm64_doublenompinompi
+            SHORT_CONFIG: osx_arm64_doublenompinompi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-latest']
+          - CONFIG: osx_arm64_doubleyesmpinompi
+            SHORT_CONFIG: osx_arm64_doubleyesmpinompi
+            UPLOAD_PACKAGES: True
+            os: macos
+            runs_on: ['macos-latest']
+    steps:
+
+    - name: Manage disk space
+      if: matrix.os == 'ubuntu'
+      run: |
+        sudo mkdir -p /opt/empty_dir || true
+        for d in \
+                 /opt/ghc \
+                 /opt/hostedtoolcache \
+                 /usr/lib/jvm \
+                 /usr/local/.ghcup \
+                 /usr/local/lib/android \
+                 /usr/local/share/powershell \
+                 /usr/share/dotnet \
+                 /usr/share/swift \
+                 ; do
+          sudo rsync --stats -a --delete /opt/empty_dir/ $d || true
+        done
+        BROWSERS="firefox google-chrome-stable microsoft-edge-stable"
+        BROWSERS_TO_REMOVE=$(dpkg --get-selections $BROWSERS 2>/dev/null | awk '{print $1}')
+        sudo apt-get remove --purge -y $BROWSERS_TO_REMOVE
+
+        sudo apt-get autoremove -y >& /dev/null
+        sudo apt-get autoclean -y >& /dev/null
+        sudo docker image prune --all --force
+        df -h
+
+    - name: Checkout code
+      uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+
+    - name: Build on Linux
+      id: build-linux
+      if: matrix.os == 'ubuntu'
+      env:
+        CONFIG: ${{ matrix.CONFIG }}
+        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        DOCKER_IMAGE: ${{ matrix.DOCKER_IMAGE }}
+        CI: github_actions
+        CONDA_FORGE_DOCKER_RUN_ARGS: "${{ matrix.CONDA_FORGE_DOCKER_RUN_ARGS }}"
+        BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
+      shell: bash
+      run: |
+        if [[ "$(uname -m)" == "x86_64" ]]; then
+          echo "::group::Configure binfmt_misc"
+          docker run --rm --privileged multiarch/qemu-user-static:register --reset --credential yes
+        fi
+        export flow_run_id="github_$GITHUB_RUN_ID"
+        export remote_url="https://github.com/$GITHUB_REPOSITORY"
+        export sha="$GITHUB_SHA"
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export GIT_BRANCH="$(basename $GITHUB_REF)"
+        if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+          export IS_PR_BUILD="True"
+        else
+          export IS_PR_BUILD="False"
+        fi
+        echo "::endgroup::"
+        ./.scripts/run_docker_build.sh
+
+    - name: Build on macOS
+      id: build-macos
+      if: matrix.os == 'macos'
+      env:
+        CONFIG: ${{ matrix.CONFIG }}
+        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        CI: github_actions
+        BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
+      shell: bash
+      run: |
+        export flow_run_id="github_$GITHUB_RUN_ID"
+        export remote_url="https://github.com/$GITHUB_REPOSITORY"
+        export sha="$GITHUB_SHA"
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export GIT_BRANCH="$(basename $GITHUB_REF)"
+        if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+          export IS_PR_BUILD="True"
+        else
+          export IS_PR_BUILD="False"
+        fi
+        ./.scripts/run_osx_build.sh
+
+    - name: Build on windows
+      id: build-windows
+      if: matrix.os == 'windows'
+      shell: cmd
+      run: |
+        set "flow_run_id=github_%GITHUB_RUN_ID%"
+        set "remote_url=https://github.com/%GITHUB_REPOSITORY%"
+        set "sha=%GITHUB_SHA%"
+        call ".scripts\run_win_build.bat"
+      env:
+        # default value; make it explicit, as it needs to match with artefact
+        # generation below. Not configurable for now, can be revisited later
+        CONDA_BLD_DIR: C:\bld
+        MINIFORGE_HOME: D:\Miniforge
+        PYTHONUNBUFFERED: 1
+        CONFIG: ${{ matrix.CONFIG }}
+        CI: github_actions
+        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
+
+    - name: Determine build outcome
+      # this is to merge the status of the linux/osx/win builds into
+      # something we can easily reuse during artefact generation
+      id: determine-status
+      if: ${{ always() }}
+      shell: bash
+      env:
+        OS: ${{ matrix.os }}
+      run: |
+        if [[ "$OS" == "ubuntu" ]]; then
+          STATUS=${{ steps.build-linux.outcome }}
+        elif [[ "$OS" == "macos" ]]; then
+          STATUS=${{ steps.build-macos.outcome }}
+        elif [[ "$OS" == "windows" ]]; then
+          STATUS=${{ steps.build-windows.outcome }}
+        fi
+        if [ -z "$STATUS" ]; then
+          # steps that never ran will have empty status
+          STATUS="cancelled"
+        fi
+        echo "status=$STATUS" >> $GITHUB_OUTPUT
+
+    - name: Prepare conda build artifacts
+      continue-on-error: true
+      id: prepare-artifacts
+      shell: bash
+      # we do not want to trigger artefact creation if the build was cancelled
+      if: ${{ always() && steps.determine-status.outputs.status != 'cancelled' }}
+      env:
+        CI: github_actions
+        CONFIG: ${{ matrix.CONFIG }}
+        SHORT_CONFIG: ${{ matrix.SHORT_CONFIG }}
+        JOB_STATUS: ${{ steps.determine-status.outputs.status }}
+        OS: ${{ matrix.os }}
+      run: |
+        export CI_RUN_ID=$GITHUB_RUN_ID
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export ARTIFACT_STAGING_DIR="$GITHUB_WORKSPACE"
+        if [ $OS == "macos" ]; then
+          export CONDA_BLD_DIR="${MINIFORGE_HOME:-${HOME}/miniforge3}/conda-bld"
+        elif [ $OS == "windows" ]; then
+          # this needs to be consistent with build step, see above
+          export CONDA_BLD_DIR="C:\\bld"
+        else
+          export CONDA_BLD_DIR="build_artifacts"
+        fi
+        # Archive everything in CONDA_BLD_DIR except environments
+        # Archive the CONDA_BLD_DIR environments only when the job fails
+        # Use different prefix for successful and failed build artifacts
+        # so random failures don't prevent rebuilds from creating artifacts.
+        if [ $JOB_STATUS == "failure" ]; then
+          export BLD_ARTIFACT_PREFIX="conda_artifacts"
+          export ENV_ARTIFACT_PREFIX="conda_envs"
+        else
+          export BLD_ARTIFACT_PREFIX="conda_pkgs"
+        fi
+        if [ $OS == "windows" ]; then
+          pwsh -Command ". '.scripts/create_conda_build_artifacts.bat'"
+        else
+          ./.scripts/create_conda_build_artifacts.sh
+        fi
+
+    - name: Store conda build artifacts
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      if: ${{ always() && steps.prepare-artifacts.outcome == 'success' }}
+      with:
+        name: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_NAME }}
+        path: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_PATH }}
+        retention-days: 14
+      continue-on-error: true
+
+    - name: Store conda build environment artifacts
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      # only relevant if build failed, see above
+      if: ${{ always() && steps.determine-status.outputs.status == 'failure' && steps.prepare-artifacts.outcome == 'success' }}
+      with:
+        name: ${{ steps.prepare-artifacts.outputs.ENV_ARTIFACT_NAME }}
+        path: ${{ steps.prepare-artifacts.outputs.ENV_ARTIFACT_PATH }}
+        retention-days: 14
+      continue-on-error: true
