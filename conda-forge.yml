@@ -1,1 +1,21 @@
-{}
+github:
+  user_or_org: metatensor
+
+github_actions:
+  timeout_minutes: 1080
+  triggers:
+  - push
+  - pull_request
+  free_disk_space: [apt, cache, docker]
+  store_build_artifacts: true
+
+provider:
+  linux_64: github_actions
+  osx_64: github_actions
+  osx_arm64: github_actions
+  linux_aarch64: github_actions
+
+os_version:
+  linux_64: alma8
+  linux_aarch64: alma8
+  linux_ppc64le: alma8
