@@ -1,18 +1,24 @@
-# Update from download page, e.g. https://manual.gromacs.org/documentation/2021/download.html
-# For latest release, see
-# https://manual.gromacs.org/documentation/
+{% set git_rev = "9c302910d102a5eeaa68ae35fce2354ed5b7e80b" %}
+# increase this by 1 everytime you change the git commit above without also
+# changing the `version`
+{% set git_rev_count = "0" %}
+
 {% set name = "gromacs-metatomic" %}
-{% set version = "2026.0" %}
+{% set conda_version = "2026.0" %}
+
+# Use a higher build number for prefered variants, to ensure that they are
+# picked first by conda's solver, and installed where the platform supports it.
 {% set build = 0 %}
 {% set build = build + 100 %}  # [mpi == 'nompi' and double == 'no' and cuda_compiler_version == "None"]
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ conda_version }}.mta{{ git_rev_count }}
 
 source:
-  url: https://ftp.gromacs.org/gromacs/gromacs-{{ version }}.tar.gz
-  sha256: 229726f436cc515bfd8c4aa7af3a97b18072f71b5ebd0b08daf6565571e2d9eb
+  git_url: https://github.com/metatensor/gromacs.git
+  git_rev: {{ git_rev }}
+  depth: 1
 
 build:
   number: {{ build }}
@@ -52,6 +58,11 @@ requirements:
     - libhwloc 2.*
     - fftw
     - {{ mpi }}  # [mpi != 'nompi']
+    - libmetatomic-torch >=0.1.5,<0.2.0
+    # always build against the CPU version of libtorch, we can still pick the
+    # cuda one at runtime
+    - libtorch * cpu*
+    - libtorch
   run:
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
     - cuda-toolkit >=12.9,<13  # [cuda_compiler_version != "None"]
@@ -61,6 +72,9 @@ requirements:
     - libhwloc 2.*
     - {{ mpi }}  # [mpi != 'nompi']
     - __cuda  # [not osx and cuda_compiler_version != "None"]
+    - libmetatomic-torch >=0.1.7,<0.2.0
+    - libmetatensor-torch >=0.8.2,<0.9.0
+    - libmetatensor >=0.1.19,<0.2.0
 
 test:
   commands:
@@ -73,26 +87,16 @@ test:
     - gmx_mpi_d -version  # [mpi != 'nompi' and double == 'yes']:
 
 about:
-  home: https://www.gromacs.org/
+  home: https://docs.metatensor.org/metatomic/latest/engines/gromacs.html
   license: LGPL-2.1-or-later
   license_family: LGPL
   license_file: COPYING
-  summary: GROMACS is a versatile package to perform molecular dynamics.
-  description: |
-    GROMACS is a versatile package to perform molecular dynamics, i.e. 
-    simulate the Newtonian equations of motion for systems with hundreds 
-    to millions of particles. It is primarily designed for biochemical 
-    molecules like proteins, lipids and nucleic acids that have a lot of
-    complicated bonded interactions, but since GROMACS is extremely fast
-    at calculating the nonbonded interactions (that usually dominate
-    simulations) many groups are also using it for research on
-    non-biological systems, e.g. polymers.
-  doc_url: https://manual.gromacs.org/
-  dev_url: https://gitlab.com/gromacs/gromacs
+  summary: 'Metatomic-enabled version of GROMACS'
+  description: Metatomic-enabled version of GROMACS
+  doc_url: https://docs.metatensor.org/metatomic/latest/engines/gromacs.html
+  dev_url: https://github.com/metatensor/gromacs
 
 extra:
   recipe-maintainers:
-    - douglowe
-    - jan-janssen
-    - mabraham
-    - simonbray
+    - HaoZeke
+    - Luthaf

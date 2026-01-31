@@ -1,6 +1,16 @@
+c_stdlib_version:            # [osx]
+  - "11.0"                   # [osx]
+
 mpi:
   - openmpi
   - nompi
 double:
   - no
   - yes
+
+channel_targets:
+  - metatensor main
+
+channel_sources:
+  - metatensor
+  - conda-forge

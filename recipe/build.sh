@@ -5,6 +5,12 @@ set -x
 mkdir build
 cd build
 
+if [[ $(uname) == "Linux" ]]; then
+    # NOTE: force the linker to use the generic libtorch.so instead of
+    # libtorch_cpu.so allows switching to the CUDA version at runtime
+    export LDFLAGS="${LDFLAGS} -Wl,--no-as-needed,${PREFIX}/lib/libtorch.so -Wl,--as-needed"
+fi
+
 if [[ "$HOST" == "arm64-apple-darwin"* ]];
 then
     # ARM Mac
@@ -40,6 +46,7 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_VERSION_STRING_OF_FORK="conda-forge"
     -DGMX_INSTALL_LEGACY_API=ON
     -DGMX_USE_RDTSCP=OFF
+    -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS"
   )
   # OpenCL header on Mac is not recognized by GROMACS
   if [[ "$(uname)" != 'Darwin' && "${double}" == "no" ]] ; then
@@ -72,8 +79,9 @@ for simdflavor in "${simdflavors[@]}" ; do
       cmake_args+=(-DCMAKE_CXX_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY')
   fi
   cmake .. "${cmake_args[@]}"
-  make -j "${CPU_COUNT}"
-  make install
+  cmake --build . -- -j "${CPU_COUNT}"
+  cmake --build . --target install
+  cmake --install .
 done
 
 
