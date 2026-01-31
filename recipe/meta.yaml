@@ -45,15 +45,15 @@ requirements:
     - {{ stdlib("c") }}
     - cmake >=3.28
     - pocl
-    - python >=3.7
     - perl
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - coreutils  # [cuda_compiler_version != "None"]
-    - cuda-toolkit >=12.9,<13  # [cuda_compiler_version != "None"]
+    - cuda-toolkit  # [cuda_compiler_version != "None"]
   host:
+    - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
-    - cuda-toolkit >=12.9,<13  # [cuda_compiler_version != "None"]
+    - cuda-toolkit  # [cuda_compiler_version != "None"]
     - khronos-opencl-icd-loader  # [osx]
     - libhwloc 2.*
     - fftw
@@ -64,8 +64,9 @@ requirements:
     - libtorch * cpu*
     - libtorch
   run:
+    - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
-    - cuda-toolkit >=12.9,<13  # [cuda_compiler_version != "None"]
+    - cuda-toolkit  # [cuda_compiler_version != "None"]
     - khronos-opencl-icd-loader  # [osx]
     - ocl_icd_wrapper_apple  # [osx]
     - fftw
