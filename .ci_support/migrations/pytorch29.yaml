@@ -1,0 +1,8 @@
+__migrator:
+  build_number: 1
+  kind: version
+  migration_number: 1
+libtorch:
+- '2.9'
+pytorch:
+- '2.9'
