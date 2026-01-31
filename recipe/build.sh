@@ -47,6 +47,7 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_INSTALL_LEGACY_API=ON
     -DGMX_USE_RDTSCP=OFF
     -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS"
+    -DGMX_METATOMIC=AUTO
   )
   # OpenCL header on Mac is not recognized by GROMACS
   if [[ "$(uname)" != 'Darwin' && "${double}" == "no" ]] ; then
