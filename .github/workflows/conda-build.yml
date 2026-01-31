@@ -21,242 +21,242 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_h3c0d6dff
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb984c4b6
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_h7d571820
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h0efa9a7b
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_hec57aef9
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h77b256be
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_h494dd591
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h123a914c
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_ha8152a11
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb257b711
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_hc5f3314d
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h78a6ca14
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_hd93c998e
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h23d3a754
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.6cxx_compiler_version13doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.6cxx_co_hc002fd9e
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_haf755ff9
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hb77e4c45
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h1a225333
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hfe2a3545
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_hbfd3d0d9
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h06fd4dff
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h5250c0c9
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hb535f29a
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h392a1ca2
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hc04f35cd
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h7d6b8bb1
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hb443757e
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_hea9f7128
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h2bfce92d
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h6921a6ee
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h8ac27b07
+          - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h852904bc
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h1085efdf
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h2f6f29ff
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h835ac6f2
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h7440905d
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_haae79da1
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h9784d235
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h9751bc3d
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h82e2eec0
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h982c174a
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.10.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h34ec1766
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h50744442
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.11.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h262af0f4
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_h6bdbfabf
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.12.____cpython
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h8debc865
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonecxx_co_hede7f38a
+          - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h23a65e63
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h8c17c913
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.10.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_he6bb5b16
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h521b988c
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.11.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hed7cc4aa
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h789037e1
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.12.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h76b363bf
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hc8e28d7f
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.13.____cp313
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h1f712233
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h75c7e830
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.10.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hd0418d59
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h71e601b9
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.11.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h75d030d0
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h4a31bcef
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.12.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h6b5ff118
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h3ef2b0cb
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h90cb099f
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h02428f9b
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.10.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_ha3c82179
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h63e45cee
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.11.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h9289cced
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hc8708704
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.12.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h22da0a2d
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h9d36ea3b
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.13.____cp313
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h64da9c48
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hceb0ed62
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.10.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_haceeee61
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h32a13c42
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.11.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hbeb2e99c
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_hba5a54a6
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.12.____cpython
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hde0874d7
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
-          - CONFIG: linux_aarch64_cuda_compiler_versionNonecxx_compiler_version14doubleyesmpiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNonec_h3b1b26d8
+          - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hc014c68b
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-24.04-arm']
