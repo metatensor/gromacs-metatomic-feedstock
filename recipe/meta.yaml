@@ -1,4 +1,4 @@
-{% set git_rev = "9c302910d102a5eeaa68ae35fce2354ed5b7e80b" %}
+{% set git_rev = "4afd47b520977ca0a00bdfe903be57013f53080c" %}
 # increase this by 1 everytime you change the git commit above without also
 # changing the `version`
 {% set git_rev_count = "0" %}
@@ -101,3 +101,4 @@ extra:
   recipe-maintainers:
     - HaoZeke
     - Luthaf
+    - PicoCentauri

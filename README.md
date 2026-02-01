@@ -106,4 +106,5 @@ Feedstock Maintainers
 
 * [@HaoZeke](https://github.com/HaoZeke/)
 * [@Luthaf](https://github.com/Luthaf/)
+* [@PicoCentauri](https://github.com/PicoCentauri/)
 
