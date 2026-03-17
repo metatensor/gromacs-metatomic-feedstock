@@ -39,12 +39,6 @@ jobs:
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h123a914c
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.10.____cpython
             SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb257b711
             UPLOAD_PACKAGES: True
@@ -59,12 +53,6 @@ jobs:
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.12.____cpython
             SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h23d3a754
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
-          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_haf755ff9
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
@@ -409,7 +397,7 @@ jobs:
         df -h
 
     - name: Checkout code
-      uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Build on Linux
       id: build-linux
@@ -545,7 +533,7 @@ jobs:
         fi
 
     - name: Store conda build artifacts
-      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
       if: ${{ always() && steps.prepare-artifacts.outcome == 'success' }}
       with:
         name: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_NAME }}
@@ -554,7 +542,7 @@ jobs:
       continue-on-error: true
 
     - name: Store conda build environment artifacts
-      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
       # only relevant if build failed, see above
       if: ${{ always() && steps.determine-status.outputs.status == 'failure' && steps.prepare-artifacts.outcome == 'success' }}
       with:

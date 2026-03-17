@@ -1,6 +1,10 @@
 c_stdlib_version:            # [osx]
   - "11.0"                   # [osx]
 
+cuda_compiler_version:   # [linux64]
+  - None                 # [linux64]
+  - 12.9                 # [linux64]
+
 mpi:
   - openmpi
   - nompi
