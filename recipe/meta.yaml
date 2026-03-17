@@ -1,7 +1,7 @@
-{% set git_rev = "28a581c225069e03805027bb512a8c3ddc78b443" %}
+{% set git_rev = "f020d11dee4e2cddee92d1ece1f2e7f63b8c2bb3" %}
 # increase this by 1 everytime you change the git commit above without also
 # changing the `version`
-{% set git_rev_count = "0" %}
+{% set git_rev_count = "2" %}
 
 {% set name = "gromacs-metatomic" %}
 {% set conda_version = "2026.0" %}
