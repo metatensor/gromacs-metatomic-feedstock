@@ -36,6 +36,9 @@ build:
   # fails with: /usr/local/cuda/lib64/libcudart_static.a: error adding symbols: file in wrong format
   skip: true  # [(aarch64 or ppc64le) and double == "no" and cuda_compiler_version != "None"]
 
+  # cuda-gdb for CUDA 12.9 has no Python 3.13 build on conda-forge yet
+  skip: true  # [cuda_compiler_version != "None" and py == 313]
+
 requirements:
   build:
     - make
