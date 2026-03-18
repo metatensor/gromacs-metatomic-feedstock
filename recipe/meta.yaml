@@ -36,9 +36,6 @@ build:
   # fails with: /usr/local/cuda/lib64/libcudart_static.a: error adding symbols: file in wrong format
   skip: true  # [(aarch64 or ppc64le) and double == "no" and cuda_compiler_version != "None"]
 
-  # cuda-gdb for CUDA 12.9 has no Python 3.13 build on conda-forge yet
-  skip: true  # [cuda_compiler_version != "None" and py == 313]
-
 requirements:
   build:
     - make
@@ -52,11 +49,21 @@ requirements:
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
     - coreutils  # [cuda_compiler_version != "None"]
-    - cuda-toolkit  # [cuda_compiler_version != "None"]
+    # Use individual CUDA packages instead of cuda-toolkit to avoid
+    # cuda-gdb pulling in a conflicting Python version
+    - cuda-cudart-dev  # [cuda_compiler_version != "None"]
+    - cuda-driver-dev  # [cuda_compiler_version != "None"]
+    - cuda-nvrtc-dev   # [cuda_compiler_version != "None"]
+    - cuda-profiler-api  # [cuda_compiler_version != "None"]
+    - libcufft-dev     # [cuda_compiler_version != "None"]
   host:
     - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
-    - cuda-toolkit  # [cuda_compiler_version != "None"]
+    - cuda-cudart-dev  # [cuda_compiler_version != "None"]
+    - cuda-driver-dev  # [cuda_compiler_version != "None"]
+    - cuda-nvrtc-dev   # [cuda_compiler_version != "None"]
+    - cuda-profiler-api  # [cuda_compiler_version != "None"]
+    - libcufft-dev     # [cuda_compiler_version != "None"]
     - khronos-opencl-icd-loader  # [osx]
     - libhwloc 2.*
     - fftw
@@ -69,7 +76,7 @@ requirements:
   run:
     - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
-    - cuda-toolkit  # [cuda_compiler_version != "None"]
+    - cuda-cudart  # [cuda_compiler_version != "None"]
     - khronos-opencl-icd-loader  # [osx]
     - ocl_icd_wrapper_apple  # [osx]
     - fftw

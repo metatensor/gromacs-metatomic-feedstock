@@ -39,6 +39,12 @@ jobs:
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h123a914c
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.10.____cpython
             SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb257b711
             UPLOAD_PACKAGES: True
@@ -53,6 +59,12 @@ jobs:
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.12.____cpython
             SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h23d3a754
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+          - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.13.____cp313
+            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_haf755ff9
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
