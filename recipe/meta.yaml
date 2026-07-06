@@ -1,4 +1,4 @@
-{% set git_rev = "e8b5b58b98debb569126b8e8211e6c23f5950569" %}
+{% set git_rev = "dbfa4035cbcc4e9f36bb91aa5dd70ee48d041233" %}
 # increase this by 1 everytime you change the git commit above without also
 # changing the `version`
 {% set git_rev_count = "3" %}
