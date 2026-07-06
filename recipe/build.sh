@@ -48,6 +48,9 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_USE_RDTSCP=OFF
     -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS"
     -DGMX_METATOMIC=AUTO
+    # Prefer conda host packages (PR #13 find_package path); do not FetchContent.
+    -DDOWNLOAD_METATENSOR=OFF
+    -DDOWNLOAD_METATOMIC=OFF
   )
   # OpenCL header on Mac is not recognized by GROMACS
   if [[ "$(uname)" != 'Darwin' && "${double}" == "no" ]] ; then
