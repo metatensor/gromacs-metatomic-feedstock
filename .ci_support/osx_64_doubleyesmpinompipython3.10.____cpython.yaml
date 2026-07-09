@@ -22,7 +22,7 @@ double:
 fftw:
 - '3'
 libtorch:
-- '2.9'
+- '2.12'
 llvm_openmp:
 - '19'
 macos_machine:
