@@ -12,6 +12,11 @@ double:
   - no
   - yes
 
+# Override conda-forge global pin (2.9). libmetatomic-torch 0.1.15
+# requires libtorch >=2.12.1,<2.13 — same co-pin as eon-feedstock.
+libtorch:
+  - "2.12"
+
 channel_targets:
   - metatensor main
 

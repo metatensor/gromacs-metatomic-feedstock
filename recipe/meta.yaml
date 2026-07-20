@@ -1,7 +1,8 @@
-{% set git_rev = "f020d11dee417b3217ee61d8e46ac48b18d6e785" %}
+# metatomic tip after metatensor/gromacs#13 merge (sample_kind + 0.1.15 floors)
+{% set git_rev = "30aa47d619b58f115d71630dd07fc5312510f1a6" %}
 # increase this by 1 everytime you change the git commit above without also
 # changing the `version`
-{% set git_rev_count = "2" %}
+{% set git_rev_count = "3" %}
 
 {% set name = "gromacs-metatomic" %}
 {% set conda_version = "2026.0" %}
@@ -18,6 +19,7 @@ package:
   version: {{ conda_version }}.mta{{ git_rev_count }}
 
 source:
+  # metatensor/gromacs metatomic branch tip (includes #13 sample_kind + floors).
   git_url: https://github.com/metatensor/gromacs.git
   git_rev: {{ git_rev }}
   depth: 1
@@ -70,7 +72,9 @@ requirements:
     - libhwloc 2.*
     - fftw
     - {{ mpi }}  # [mpi != 'nompi']
-    - libmetatomic-torch >=0.1.5,<0.2.0
+    - libmetatomic-torch >=0.1.15,<0.2.0
+    - libmetatensor-torch >=0.10.0,<0.11.0
+    - libmetatensor >=0.1.17,<0.3.0
     # always build against the CPU version of libtorch, we can still pick the
     # cuda one at runtime
     - libtorch * cpu*
@@ -85,9 +89,9 @@ requirements:
     - libhwloc 2.*
     - {{ mpi }}  # [mpi != 'nompi']
     - __cuda  # [not osx and cuda_compiler_version != "None"]
-    - libmetatomic-torch >=0.1.7,<0.2.0
-    - libmetatensor-torch >=0.8.2,<0.9.0
-    - libmetatensor >=0.1.19,<0.2.0
+    - libmetatomic-torch >=0.1.15,<0.2.0
+    - libmetatensor-torch >=0.10.0,<0.11.0
+    - libmetatensor >=0.1.17,<0.3.0
 
 test:
   commands:
