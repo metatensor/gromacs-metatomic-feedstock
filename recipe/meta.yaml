@@ -10,7 +10,7 @@
 # Use a higher build number for preferred variants, to ensure that they are
 # picked first by conda's solver, and installed where the platform supports it.
 # Prefer: CUDA > non-CUDA, MPI > nompi, single > double
-{% set build = 0 %}
+{% set build = 1 %}
 {% set build = build + 100 %}  # [double == 'no' and cuda_compiler_version != "None"]
 {% set build = build + 50 %}   # [mpi != 'nompi']
 
@@ -71,6 +71,14 @@ requirements:
     - khronos-opencl-icd-loader  # [osx]
     - libhwloc 2.*
     - fftw
+    # Flexible conda-forge BLAS/LAPACK (netlib at build; openblas/mkl at install).
+    # GROMACS links Fortran BLAS (daxpy_, dgemm_, ...) into libgromacs; if FindBLAS
+    # is left free and host libtorch is cpu_mkl, it records DT_NEEDED on
+    # libmkl_*.so.3. That breaks installs that swap to libtorch cpu_generic /
+    # nomkl (missing sonames) and blocks true backend-agnostic use. Force the
+    # libblas/liblapack ABI instead; run_exports then pull the chosen impl.
+    - libblas
+    - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
     - libmetatomic-torch >=0.1.15,<0.2.0
     - libmetatensor-torch >=0.10.0,<0.11.0
@@ -87,6 +95,11 @@ requirements:
     - ocl_icd_wrapper_apple  # [osx]
     - fftw
     - libhwloc 2.*
+    # libblas/liblapack carry run_exports for the selected implementation
+    # (openblas, mkl, blis, ...). Listed explicitly so the solver cannot drop
+    # them when a client env re-pins libtorch to a different BLAS flavor.
+    - libblas
+    - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
     - __cuda  # [not osx and cuda_compiler_version != "None"]
     - libmetatomic-torch >=0.1.15,<0.2.0
