@@ -30,9 +30,9 @@ fi
 
 ## See INSTALL of gromacs distro
 for simdflavor in "${simdflavors[@]}" ; do
-  # Point GROMACS at conda-forge's flexible libblas/liblapack, not at MKL
-  # libraries that may be present only as a transitive host dep of libtorch.
-  # See recipe/meta.yaml host comments (DT_NEEDED on libmkl_* vs backend swap).
+  # Point GROMACS at conda-forge's flexible libblas/liblapack (host is netlib
+  # so DT_NEEDED is libblas.so.3 / liblapack.so.3, not a vendor soname).
+  # See recipe/meta.yaml host comments.
   blas_lib="${PREFIX}/lib/libblas${SHLIB_EXT}"
   lapack_lib="${PREFIX}/lib/liblapack${SHLIB_EXT}"
   cmake_args=(
