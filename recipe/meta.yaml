@@ -10,7 +10,7 @@
 # Use a higher build number for preferred variants, to ensure that they are
 # picked first by conda's solver, and installed where the platform supports it.
 # Prefer: CUDA > non-CUDA, MPI > nompi, single > double
-{% set build = 1 %}
+{% set build = 2 %}
 {% set build = build + 100 %}  # [double == 'no' and cuda_compiler_version != "None"]
 {% set build = build + 50 %}   # [mpi != 'nompi']
 
@@ -71,21 +71,23 @@ requirements:
     - khronos-opencl-icd-loader  # [osx]
     - libhwloc 2.*
     - fftw
-    # Flexible conda-forge BLAS/LAPACK (netlib at build; openblas/mkl at install).
-    # GROMACS links Fortran BLAS (daxpy_, dgemm_, ...) into libgromacs; if FindBLAS
-    # is left free and host libtorch is cpu_mkl, it records DT_NEEDED on
-    # libmkl_*.so.3. That breaks installs that swap to libtorch cpu_generic /
-    # nomkl (missing sonames) and blocks true backend-agnostic use. Force the
-    # libblas/liblapack ABI instead; run_exports then pull the chosen impl.
-    - libblas
-    - liblapack
+    # Flexible conda-forge BLAS/LAPACK. GROMACS links Fortran BLAS (daxpy_,
+    # dgemm_, ...) into libgromacs. If FindBLAS is free and host libtorch is
+    # cpu_mkl, it records DT_NEEDED on concrete vendor sonames (libmkl_* /
+    # libopenblas), which break when a client re-pins the BLAS flavor.
+    # Build against netlib so the ELF soname is libblas.so.3 / liblapack.so.3;
+    # at install time the blas metapackage can select openblas, mkl, blis, …
+    # (conda-forge knowledge base: BLAS).
+    - libblas * *netlib
+    - liblapack * *netlib
     - {{ mpi }}  # [mpi != 'nompi']
     - libmetatomic-torch >=0.1.15,<0.2.0
     - libmetatensor-torch >=0.10.0,<0.11.0
     - libmetatensor >=0.1.17,<0.3.0
-    # always build against the CPU version of libtorch, we can still pick the
-    # cuda one at runtime
-    - libtorch * cpu*
+    # Build against cpu_generic libtorch so host does not pull MKL (which would
+    # fight the netlib libblas pin). The generic libtorch.so can still be
+    # swapped for a CUDA build at runtime via the shared-object switch below.
+    - libtorch * cpu_generic*
     - libtorch
   run:
     - python
@@ -95,9 +97,7 @@ requirements:
     - ocl_icd_wrapper_apple  # [osx]
     - fftw
     - libhwloc 2.*
-    # libblas/liblapack carry run_exports for the selected implementation
-    # (openblas, mkl, blis, ...). Listed explicitly so the solver cannot drop
-    # them when a client env re-pins libtorch to a different BLAS flavor.
+    # Flexible ABI; implementation chosen by the solver / client env.
     - libblas
     - liblapack
     - {{ mpi }}  # [mpi != 'nompi']
