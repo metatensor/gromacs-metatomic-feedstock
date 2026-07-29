@@ -19,6 +19,10 @@ double:
 - 'no'
 fftw:
 - '3'
+libblas:
+- 3.9.* *netlib
+liblapack:
+- 3.9.* *netlib
 libtorch:
 - '2.12'
 mpi:
