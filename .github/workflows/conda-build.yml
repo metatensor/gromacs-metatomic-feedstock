@@ -19,442 +19,888 @@ jobs:
     timeout-minutes: 1080
     strategy:
       fail-fast: false
+      max-parallel: 50
       matrix:
         include:
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb984c4b6
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_hb984c4b6
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h0efa9a7b
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_h0efa9a7b
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h77b256be
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_h77b256be
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h123a914c
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_h123a914c
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_hb257b711
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_hb257b711
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h78a6ca14
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_h78a6ca14
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_h23d3a754
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_h23d3a754
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_version12.9doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_version12.9double_haf755ff9
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_version12.9double_haf755ff9
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h1a225333
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h1a225333
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_hbfd3d0d9
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_hbfd3d0d9
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h5250c0c9
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h5250c0c9
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h392a1ca2
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h392a1ca2
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h7d6b8bb1
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h7d6b8bb1
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_hea9f7128
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_hea9f7128
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h6921a6ee
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h6921a6ee
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h852904bc
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h852904bc
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h2f6f29ff
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h2f6f29ff
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h7440905d
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h7440905d
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h9784d235
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h9784d235
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h82e2eec0
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h82e2eec0
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h34ec1766
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h34ec1766
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h262af0f4
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h262af0f4
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h8debc865
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h8debc865
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_64_cuda_compiler_versionNonedouble_h23a65e63
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-latest']
+            CONFIG_SHORT: linux_64_cuda_compiler_versionNonedouble_h23a65e63
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-latest']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_he6bb5b16
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_he6bb5b16
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hed7cc4aa
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_hed7cc4aa
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h76b363bf
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h76b363bf
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompinompipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h1f712233
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h1f712233
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hd0418d59
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_hd0418d59
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h75d030d0
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h75d030d0
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h6b5ff118
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h6b5ff118
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h90cb099f
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h90cb099f
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_ha3c82179
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_ha3c82179
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h9289cced
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h9289cced
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h22da0a2d
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h22da0a2d
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_h64da9c48
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_h64da9c48
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.10.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_haceeee61
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_haceeee61
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.11.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hbeb2e99c
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_hbeb2e99c
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.12.____cpython
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hde0874d7
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_hde0874d7
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: linux_aarch64_cuda_compiler_versionNonedoubleyesmpiopenmpipython3.13.____cp313
-            SHORT_CONFIG: linux_aarch64_cuda_compiler_versionNoned_hc014c68b
-            UPLOAD_PACKAGES: True
-            os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
+            CONFIG_SHORT: linux_aarch64_cuda_compiler_versionNoned_hc014c68b
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma8
+            STORE_BUILD_ARTIFACTS: True
+            UPLOAD_PACKAGES: True
+            build_workspace_dir: build_artifacts
+            docker_run_args: 
+            free_disk_space: max
+            os: ubuntu
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['ubuntu-24.04-arm']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: osx_64_doublenompinompipython3.10.____cpython
+            CONFIG_SHORT: osx_64_doublenompinompipython3.10.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: osx_64_doublenompinompipython3.11.____cpython
+            CONFIG_SHORT: osx_64_doublenompinompipython3.11.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: osx_64_doublenompinompipython3.12.____cpython
+            CONFIG_SHORT: osx_64_doublenompinompipython3.12.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: osx_64_doublenompinompipython3.13.____cp313
+            CONFIG_SHORT: osx_64_doublenompinompipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompiopenmpipython3.10.____cpython
-            SHORT_CONFIG: osx_64_doublenompiopenmpipython3.10.____cpython
+            CONFIG_SHORT: osx_64_doublenompiopenmpipython3.10.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompiopenmpipython3.11.____cpython
-            SHORT_CONFIG: osx_64_doublenompiopenmpipython3.11.____cpython
+            CONFIG_SHORT: osx_64_doublenompiopenmpipython3.11.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompiopenmpipython3.12.____cpython
-            SHORT_CONFIG: osx_64_doublenompiopenmpipython3.12.____cpython
+            CONFIG_SHORT: osx_64_doublenompiopenmpipython3.12.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doublenompiopenmpipython3.13.____cp313
-            SHORT_CONFIG: osx_64_doublenompiopenmpipython3.13.____cp313
+            CONFIG_SHORT: osx_64_doublenompiopenmpipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpinompipython3.10.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpinompipython3.10.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpinompipython3.11.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpinompipython3.11.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpinompipython3.12.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpinompipython3.12.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: osx_64_doubleyesmpinompipython3.13.____cp313
+            CONFIG_SHORT: osx_64_doubleyesmpinompipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpiopenmpipython3.10.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpiopenmpipython3.10.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpiopenmpipython3.10.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpiopenmpipython3.11.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpiopenmpipython3.11.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpiopenmpipython3.11.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpiopenmpipython3.12.____cpython
-            SHORT_CONFIG: osx_64_doubleyesmpiopenmpipython3.12.____cpython
+            CONFIG_SHORT: osx_64_doubleyesmpiopenmpipython3.12.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_64_doubleyesmpiopenmpipython3.13.____cp313
-            SHORT_CONFIG: osx_64_doubleyesmpiopenmpipython3.13.____cp313
+            CONFIG_SHORT: osx_64_doubleyesmpiopenmpipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
+            pagefile_size: 0
+            resize_partitions: False
             runs_on: ['macos-15-intel']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doublenompinompipython3.10.____cpython
-            SHORT_CONFIG: osx_arm64_doublenompinompipython3.10.____cpython
+            CONFIG_SHORT: osx_arm64_doublenompinompipython3.10.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doublenompinompipython3.11.____cpython
-            SHORT_CONFIG: osx_arm64_doublenompinompipython3.11.____cpython
+            CONFIG_SHORT: osx_arm64_doublenompinompipython3.11.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doublenompinompipython3.12.____cpython
-            SHORT_CONFIG: osx_arm64_doublenompinompipython3.12.____cpython
+            CONFIG_SHORT: osx_arm64_doublenompinompipython3.12.____cpython
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doublenompinompipython3.13.____cp313
-            SHORT_CONFIG: osx_arm64_doublenompinompipython3.13.____cp313
+            CONFIG_SHORT: osx_arm64_doublenompinompipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doubleyesmpinompipython3.10.____cpython
-            SHORT_CONFIG: osx_arm64_doubleyesmpinompipython3.10.___hcfde9158
+            CONFIG_SHORT: osx_arm64_doubleyesmpinompipython3.10.___hcfde9158
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doubleyesmpinompipython3.11.____cpython
-            SHORT_CONFIG: osx_arm64_doubleyesmpinompipython3.11.___h7302396f
+            CONFIG_SHORT: osx_arm64_doubleyesmpinompipython3.11.___h7302396f
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doubleyesmpinompipython3.12.____cpython
-            SHORT_CONFIG: osx_arm64_doubleyesmpinompipython3.12.___h92c3b17a
+            CONFIG_SHORT: osx_arm64_doubleyesmpinompipython3.12.___h92c3b17a
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
           - CONFIG: osx_arm64_doubleyesmpinompipython3.13.____cp313
-            SHORT_CONFIG: osx_arm64_doubleyesmpinompipython3.13.____cp313
+            CONFIG_SHORT: osx_arm64_doubleyesmpinompipython3.13.____cp313
+            STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
+            build_workspace_dir: ~/miniforge3/conda-bld
+            docker_run_args: 
+            free_disk_space: max
             os: macos
-            runs_on: ['macos-latest']
+            pagefile_size: 0
+            resize_partitions: False
+            runs_on: ['macos-15']
+            tools_install_dir: ~/miniforge3
     steps:
-
-    - name: Manage disk space
-      if: matrix.os == 'ubuntu'
-      run: |
-        sudo mkdir -p /opt/empty_dir || true
-        for d in \
-                 /opt/ghc \
-                 /opt/hostedtoolcache \
-                 /usr/lib/jvm \
-                 /usr/local/.ghcup \
-                 /usr/local/lib/android \
-                 /usr/local/share/powershell \
-                 /usr/share/dotnet \
-                 /usr/share/swift \
-                 ; do
-          sudo rsync --stats -a --delete /opt/empty_dir/ $d || true
-        done
-        BROWSERS="firefox google-chrome-stable microsoft-edge-stable"
-        BROWSERS_TO_REMOVE=$(dpkg --get-selections $BROWSERS 2>/dev/null | awk '{print $1}')
-        sudo apt-get remove --purge -y $BROWSERS_TO_REMOVE
-
-        sudo apt-get autoremove -y >& /dev/null
-        sudo apt-get autoclean -y >& /dev/null
-        sudo docker image prune --all --force
-        df -h
 
     - name: Checkout code
       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+    - name: Manage disk space
+      env:
+        FREE_DISK_SPACE: ${{ matrix.free_disk_space }}
+        OS: ${{ matrix.os }}
+      shell: bash
+      run: |
+        .scripts/free_disk_space.sh "${FREE_DISK_SPACE}"
+    - name: Configure binfmt_misc
+      if: matrix.os == 'ubuntu'
+      shell: bash
+      run: |
+        if [[ "$(uname -m)" == "x86_64" ]]; then
+          docker run --rm --privileged multiarch/qemu-user-static:register --reset --credential yes
+        fi
 
     - name: Build on Linux
       id: build-linux
       if: matrix.os == 'ubuntu'
       env:
-        CONFIG: ${{ matrix.CONFIG }}
-        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
-        DOCKER_IMAGE: ${{ matrix.DOCKER_IMAGE }}
         CI: github_actions
-        CONDA_FORGE_DOCKER_RUN_ARGS: "${{ matrix.CONDA_FORGE_DOCKER_RUN_ARGS }}"
+        CONDA_BLD_PATH: ${{ matrix.build_workspace_dir }}
+        CONDA_FORGE_DOCKER_RUN_ARGS: ${{ matrix.docker_run_args }}
+        CONFIG: ${{ matrix.CONFIG }}
+        MINIFORGE_HOME: ${{ matrix.tools_install_dir }}
+        DOCKER_IMAGE: ${{ matrix.DOCKER_IMAGE }}
+        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        RATTLER_BUILD_COLOR: always
+        RATTLER_BUILD_ENABLE_GITHUB_INTEGRATION: 'true'
         BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
       shell: bash
       run: |
-        if [[ "$(uname -m)" == "x86_64" ]]; then
-          echo "::group::Configure binfmt_misc"
-          docker run --rm --privileged multiarch/qemu-user-static:register --reset --credential yes
-        fi
+        export CONDA_BLD_PATH="${CONDA_BLD_PATH/#~/${HOME}}"
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export GIT_BRANCH="$(basename $GITHUB_REF)"
+        export MINIFORGE_HOME="${MINIFORGE_HOME/#~/${HOME}}"
         export flow_run_id="github_$GITHUB_RUN_ID"
         export remote_url="https://github.com/$GITHUB_REPOSITORY"
         export sha="$GITHUB_SHA"
-        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
-        export GIT_BRANCH="$(basename $GITHUB_REF)"
         if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
           export IS_PR_BUILD="True"
         else
           export IS_PR_BUILD="False"
         fi
-        echo "::endgroup::"
         ./.scripts/run_docker_build.sh
 
     - name: Build on macOS
       id: build-macos
       if: matrix.os == 'macos'
       env:
-        CONFIG: ${{ matrix.CONFIG }}
-        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
         CI: github_actions
+        CONDA_BLD_PATH: ${{ matrix.build_workspace_dir }}
+        CONFIG: ${{ matrix.CONFIG }}
+        MINIFORGE_HOME: ${{ matrix.tools_install_dir }}
+        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        RATTLER_BUILD_COLOR: always
+        RATTLER_BUILD_ENABLE_GITHUB_INTEGRATION: 'true'
         BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
       shell: bash
       run: |
+        export CONDA_BLD_PATH="${CONDA_BLD_PATH/#~/${HOME}}"
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export GIT_BRANCH="$(basename $GITHUB_REF)"
+        export MINIFORGE_HOME="${MINIFORGE_HOME/#~/${HOME}}"
         export flow_run_id="github_$GITHUB_RUN_ID"
         export remote_url="https://github.com/$GITHUB_REPOSITORY"
         export sha="$GITHUB_SHA"
-        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
-        export GIT_BRANCH="$(basename $GITHUB_REF)"
         if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
           export IS_PR_BUILD="True"
         else
@@ -472,14 +918,14 @@ jobs:
         set "sha=%GITHUB_SHA%"
         call ".scripts\run_win_build.bat"
       env:
-        # default value; make it explicit, as it needs to match with artefact
-        # generation below. Not configurable for now, can be revisited later
-        CONDA_BLD_DIR: C:\bld
-        MINIFORGE_HOME: D:\Miniforge
-        PYTHONUNBUFFERED: 1
-        CONFIG: ${{ matrix.CONFIG }}
         CI: github_actions
+        CONDA_BLD_PATH: ${{ matrix.build_workspace_dir }}
+        CONFIG: ${{ matrix.CONFIG }}
+        MINIFORGE_HOME: ${{ matrix.tools_install_dir }}
+        PYTHONUNBUFFERED: 1
         UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
+        RATTLER_BUILD_COLOR: always
+        RATTLER_BUILD_ENABLE_GITHUB_INTEGRATION: 'true'
         BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
 
     - name: Determine build outcome
@@ -509,27 +955,22 @@ jobs:
       id: prepare-artifacts
       shell: bash
       # we do not want to trigger artefact creation if the build was cancelled
-      if: ${{ always() && steps.determine-status.outputs.status != 'cancelled' }}
+      if: ${{ always() && steps.determine-status.outputs.status != 'cancelled' && matrix.STORE_BUILD_ARTIFACTS }}
       env:
         CI: github_actions
+        CONDA_BLD_PATH: ${{ matrix.build_workspace_dir }}
         CONFIG: ${{ matrix.CONFIG }}
-        SHORT_CONFIG: ${{ matrix.SHORT_CONFIG }}
+        CONFIG_SHORT: ${{ matrix.CONFIG_SHORT }}
         JOB_STATUS: ${{ steps.determine-status.outputs.status }}
         OS: ${{ matrix.os }}
       run: |
-        export CI_RUN_ID=$GITHUB_RUN_ID
-        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
         export ARTIFACT_STAGING_DIR="$GITHUB_WORKSPACE"
-        if [ $OS == "macos" ]; then
-          export CONDA_BLD_DIR="${MINIFORGE_HOME:-${HOME}/miniforge3}/conda-bld"
-        elif [ $OS == "windows" ]; then
-          # this needs to be consistent with build step, see above
-          export CONDA_BLD_DIR="C:\\bld"
-        else
-          export CONDA_BLD_DIR="build_artifacts"
-        fi
-        # Archive everything in CONDA_BLD_DIR except environments
-        # Archive the CONDA_BLD_DIR environments only when the job fails
+        export CI_RUN_ID=$GITHUB_RUN_ID
+        export CONDA_BLD_PATH="${CONDA_BLD_PATH/#~/${HOME}}"
+        export FEEDSTOCK_NAME="$(basename $GITHUB_REPOSITORY)"
+        export MINIFORGE_HOME="${MINIFORGE_HOME/#~/${HOME}}"
+        # Archive everything in CONDA_BLD_PATH except environments
+        # Archive the CONDA_BLD_PATH environments only when the job fails
         # Use different prefix for successful and failed build artifacts
         # so random failures don't prevent rebuilds from creating artifacts.
         if [ $JOB_STATUS == "failure" ]; then
@@ -545,7 +986,7 @@ jobs:
         fi
 
     - name: Store conda build artifacts
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       if: ${{ always() && steps.prepare-artifacts.outcome == 'success' }}
       with:
         name: ${{ steps.prepare-artifacts.outputs.BLD_ARTIFACT_NAME }}
@@ -554,7 +995,7 @@ jobs:
       continue-on-error: true
 
     - name: Store conda build environment artifacts
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       # only relevant if build failed, see above
       if: ${{ always() && steps.determine-status.outputs.status == 'failure' && steps.prepare-artifacts.outcome == 'success' }}
       with:
