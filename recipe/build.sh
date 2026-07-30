@@ -42,7 +42,7 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_BUILD_OWN_FFTW=OFF
     -DGMX_DEFAULT_SUFFIX=ON
     # Tests are not currently run, so do not download them
-    # -DREGRESSIONTEST_DOWNLOAD=ON
+    -DREGRESSIONTEST_DOWNLOAD=OFF
     -DCMAKE_PREFIX_PATH="${PREFIX}"
     -DCMAKE_INSTALL_PREFIX="${PREFIX}"
     -DGMX_SIMD="${simdflavor}"
@@ -56,8 +56,9 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_EXTERNAL_LAPACK=ON
     -DGMX_BLAS_USER="${blas_lib}"
     -DGMX_LAPACK_USER="${lapack_lib}"
+    -DGMX_PYTHON_PACKAGE=OFF
     -DGMX_METATOMIC=AUTO
-    # Prefer conda host packages (PR #13 find_package path); do not FetchContent.
+    # Use conda packages for metatensor/metatomic, do not download them
     -DDOWNLOAD_METATENSOR=OFF
     -DDOWNLOAD_METATOMIC=OFF
   )
@@ -247,7 +248,7 @@ else
 
     if ( \`echo \$hwlist | grep -c 'avx512f'\` > 0 && -d "${PREFIX}/bin.AVX_512" && \`"${PREFIX}/bin.AVX_512/identifyavx512fmaunits" | grep -c 2\` > 0 ) then
         setenv simdflavor AVX_512
-    else 
+    else
         if ( \`echo \$hwlist | grep -c avx2\` > 0 && -d "${PREFIX}/bin.AVX2_256" ) then
             setenv simdflavor AVX2_256
         else
