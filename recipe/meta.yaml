@@ -10,7 +10,7 @@
 # Use a higher build number for preferred variants, to ensure that they are
 # picked first by conda's solver, and installed where the platform supports it.
 # Prefer: CUDA > non-CUDA, MPI > nompi, single > double
-{% set build = 2 %}
+{% set build = 3 %}
 {% set build = build + 100 %}  # [double == 'no' and cuda_compiler_version != "None"]
 {% set build = build + 50 %}   # [mpi != 'nompi']
 
@@ -61,7 +61,6 @@ requirements:
     - cuda-profiler-api  # [cuda_compiler_version != "None"]
     - libcufft-dev     # [cuda_compiler_version != "None"]
   host:
-    - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
     - cuda-cudart-dev  # [cuda_compiler_version != "None"]
     - cuda-driver-dev  # [cuda_compiler_version != "None"]
@@ -90,7 +89,6 @@ requirements:
     - libtorch * cpu_generic*
     - libtorch
   run:
-    - python
     - ocl-icd  # [linux and cuda_compiler_version == "None"]
     - cuda-cudart  # [cuda_compiler_version != "None"]
     - khronos-opencl-icd-loader  # [osx]
