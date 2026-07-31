@@ -58,6 +58,7 @@ for simdflavor in "${simdflavors[@]}" ; do
     -DGMX_LAPACK_USER="${lapack_lib}"
     -DGMX_PYTHON_PACKAGE=OFF
     -DGMX_METATOMIC=AUTO
+    -DGMX_NNPOT=OFF
     # Use conda packages for metatensor/metatomic, do not download them
     -DDOWNLOAD_METATENSOR=OFF
     -DDOWNLOAD_METATOMIC=OFF

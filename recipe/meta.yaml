@@ -23,6 +23,8 @@ source:
   git_url: https://github.com/metatensor/gromacs.git
   git_rev: {{ git_rev }}
   depth: 1
+  patches:
+    - no-python.patch
 
 build:
   number: {{ build }}
