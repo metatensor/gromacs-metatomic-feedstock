@@ -1,0 +1,22 @@
+diff --git a/src/gromacs/applied_forces/nnpot/CMakeLists.txt b/src/gromacs/applied_forces/nnpot/CMakeLists.txt
+index e2160f777b..76e8c54cbe 100644
+--- a/src/gromacs/applied_forces/nnpot/CMakeLists.txt
++++ b/src/gromacs/applied_forces/nnpot/CMakeLists.txt
+@@ -41,10 +41,15 @@ gmx_add_libgromacs_sources(
+ 
+ if (GMX_TORCH)
+     gmx_add_libgromacs_sources(
+-        nnpotforceprovider.cpp
+         torchmodel.cpp
+     )
+-    
++endif()
++
++if (GMX_NNPOT AND GMX_TORCH)
++    gmx_add_libgromacs_sources(
++        nnpotforceprovider.cpp
++    )
++
+     # find torch and python to explicitly link against: required for some torch extensions
+     find_package(Python REQUIRED COMPONENTS Development)
+ 
